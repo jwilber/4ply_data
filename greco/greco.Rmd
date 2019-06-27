@@ -1,0 +1,182 @@
+---
+title: "Skater Taxonomy - Jim Greco"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+Jim Greco has gone through a lot of phases in his career, from hollywood rocker, to glam-fueled blah, to cholo blah [rewrite these]. 
+His video parts has evolved in tandem, moving from quick sec
+tion parts, to 'hammer'-laced enders, up to representational, narrative driven skate videos.
+But throughout his seemingly constant sea of changes, one thing about Jim Greco has remained constant: his love for skateboarding.
+With a career and persona as diverse as his, I wanted to see if his skateboarding changed, and if so, to what extent. So without further ado, let's dive into the skateboard taxonmy of Jim Greco.
+
+
+
+
+
+
+```{r echo=F, warning=F, message=F}
+library(kableExtra)
+library(tidyverse)
+
+df <- read_csv('greco2.csv')
+
+vid_order <- c('hook ups asian goddess', 'baker bootleg', 'misled youth', 'baker 2g', 'baker3', 'baker has a deathwish', 'the deathwish video')
+vid_year <- c('hook ups asian goddess' = 1994,
+         'baker bootleg' = 1998,
+         'misled youth' = 1999,
+         'baker 2g' = 2000,
+         'baker3' = 2005,
+         'baker has a deathwish' = 2008,
+         'the deathwish video' = 2013
+         )
+
+df <- df %>% 
+  mutate(year = vid_year[video],
+         video_fac = factor(video, levels = vid_order, ordered = TRUE))
+```
+
+## Trick Selection
+
+Greco's trick selection reflects his 'hammer' philsophy: do a few tricks well, and do them down big shit.
+
+
+Perhaps no trick is more synonymous with Greco than the switch fs flip, a trick he did down Wilshire, HSU 14, and Carlsbad.  It's no surprise, then, to see the trick so high on the list. In fact, if combined with its nollie counterpart (the nollie bs flip), the trick would come in at rank 1.
+
+True to his 'hammers' philosophy, Greco likes to skate big shit, and it's no surprise that he has many ollie clips doing exactly that. 
+variations of the ss fs flip, bs 360s, and ollies.
+
+```{r echo=F, warning=F}
+df %>% 
+  group_by(trick) %>%
+  summarise(num = n()) %>% 
+  filter(num > 3) %>% 
+  arrange(desc(num)) %>% 
+  kable() %>% 
+  kable_styling(bootstrap_options = "striped", full_width = T)
+
+
+# - diveristy of tricks
+#   % of each trick in each video
+#   num of each tric  k in each video
+#   % distinct tricks per video
+#   % bank spots per video
+```
+
+
+Counting the tricks he did more than once in each video gives us a better idea of how Greco's trick selection has changed over time. His part from the Hook Ups video was omitted, as all thirteen tricks were unique.
+
+```{r echo=F, warning=F}
+pd <- df %>% 
+  group_by(trick, video) %>% 
+  summarise(trick_count = n()) %>% 
+  select(trick, video, trick_count) %>% 
+  filter(trick_count > 1) %>%
+  ungroup() %>%
+  arrange(video, trick_count) %>%
+  mutate(order = row_number()) 
+
+ggplot(pd, aes(x = order, y = trick_count, fill = video)) +
+  geom_bar(stat = 'identity', show.legend = FALSE) +
+  facet_wrap(~ video, scales = 'free') +
+  labs(title = "Jim Greco, Top Tricks by Video") +
+  xlab("") +
+  ylab("") +
+  scale_y_continuous(limits=c(0,5)) +
+  theme_classic() +
+  scale_x_continuous(
+    breaks = pd$order,
+    labels = pd$trick,
+    expand = c(0,0)
+  ) +
+  coord_flip()
+```
+
+
+# Greco Loves Banks
+
+Greco is often pigeonholed as a gap skater. This is fair, especially in light of his whole 'hammers' catchphrase, but the man really loves to skate sloped surfaces. Banks-to-ledges, banks-to-banks, roofs-to-banks - he's even skated banks-to-cars in three separate clips. [insert quip about Klein friendship/influence?].
+
+
+```{r echo=F, warning=F}
+df %>% 
+  count(video_fac, hasbank) %>% 
+  group_by(video_fac) %>% 
+  mutate(bankpercent = n/sum(n)) %>% 
+  filter(hasbank == 1) %>% 
+  select(video_fac, bankpercent) %>% 
+  ungroup() %>% 
+  ggplot(aes(x = video_fac, y = bankpercent)) +
+  geom_bar(stat='identity') +
+  theme_classic() +
+  labs(title = "Greco's love for banks, over time") +
+  ylab("Percent of tricks on or into bank") +
+  xlab("Video Part")
+```
+
+In some manner, this affinity for skating banks catalogues his journey in traditional skate videos full-circle. Forty-six percent of his tricks in his premiere part featured banks, with
+Forty-six percent of the clips in Greco's premiere video part involved sloped surfaces, and the number steadily until, until shooting back up to thiry percent for his final 'traditional' video part.
+
+Probably a latent influence from his friendship with Jeremy Klein?
+
+
+
+# Which Greco is the Best Greco
+
+Of all the Greco's, which is the best? Not in terms of flash, blah, blah, blah - but in terms of pure skating ability?
+One way to answer is to look at how productive are each of his video parts in terms of trick selection. 
+
+[change x-axis to video part, not year]
+
+```{r echo=F, warning=F}
+df %>% 
+  group_by(video_fac, year) %>%
+  # count distinct tricks, but don't double count
+  distinct(trick_index, .keep_all = T) %>% 
+  summarise(unique_tricks = n_distinct(trick),
+            total_tricks = n()) %>% 
+  arrange(desc(year)) %>% 
+  ggplot() +
+  # geom_line(aes(x = year, y = unique_tricks), size = 1, alpha = .75) +
+  # geom_line(aes(x = year, y = total_tricks), size = 1, alpha = .5) +
+  geom_point(aes(x = year, y = unique_tricks), size = 5, alpha = .5, color = 'red') +
+  geom_point(aes(x = year, y = total_tricks), size = 5, alpha = .5) +
+  labs(title = "Greco Got Better With Age",
+       subtitle = "Number of Tricks Over Time (Black: Total, Red: Unique)") +
+  scale_x_continuous(breaks=c(1994, 1998, 1999, 2000, 2005, 2008, 2013)) +
+  scale_y_continuous(limits=c(0, 60)) +
+  xlab("") +
+  ylab("Number of Unique Tricks") +
+  theme_classic()
+```
+
+Greco's 2013 part in the Deathwish video blah, blah, blah.
+Not only did this part have the largest amount of new (that is, not previously done in other video parts) tricks, it gave us the tech Greo, with a whopping (but confusing) five darkslide variations. I don't know either, but tech Greco is rare, and blah, blah, blah.
+
+This video part also saw Greco [talk about skating different objects with roughly the same frequency] in graph below
+
+```{r echo=F, warning=F}
+df %>% 
+  group_by(year, obstacle) %>% 
+  summarise(n = n()) %>% 
+  mutate(relfreq = n / sum(n)) %>% 
+  filter(obstacle %in% c('stair', 'gap', 'rail', 'ledge', 'hubba'),
+         !year %in% c(1994)) %>% 
+  ggplot(aes(x = year, y = relfreq, color = obstacle)) +
+  geom_line(lwd = 2) +
+  labs(title = "Current Greco is Well-Rounded",
+       subtitle = "Obstacle Selection Over Time") +
+  ylab("Percentage of Time Skating Object") +
+  theme_classic()
+```
+
+
+Did greco leave at his prime, or at his peak? Unfortunately we may never know what peak Greco, as his last two releases serve more on the art side than full-on parts. blah, blah, blah. Still, we'll take what we can get.
+
+
+
+# Bonus: Weirdest Trick
+
+Gif of his Switch Hardflip FS 180 on the bank 
+

@@ -1,0 +1,270 @@
+clip_index,trick_index,trick,switch?,inline?,obstacle,slowmo,obstacle 2,location,hasbank,video
+1,1,bs 360,,1,stair,,,,,baker3
+1,2,nollie bs flip,1,1,stair,,,,,baker3
+2,3,5050 kickflip,,,ledge ,,shootout,,,baker3
+3,4,switch noseblunt,1,1,ledge ,,,,,baker3
+3,5,nollie flip bs tail,1,1,ledge ,,,,,baker3
+4,6,switch fs nosegrind 180,1,1,ledge ,,,,,baker3
+4,7,ollie,,1,bank,,bump to bar,,1,baker3
+5,8,bs lip,,,hubba,,,,,baker3
+6,9,switch flip,1,,stair,,,,,baker3
+7,10,varial heelflip,,,stair,,,,,baker3
+8,11,bs 180,,,stair,,,,,baker3
+9,12,bs nosegrind,,,ledge ,,shootout,,,baker3
+10,13,bs smith,,,tranny,,pool,,,baker3
+11,14,kickflip pivot,,,tranny,,pool,,,baker3
+12,15,bs tail,,,ledge ,,car,bank to ledge,1,baker3
+13,16,drop in,,,roof,,roof,,1,baker3
+14,17,ollie,,,flat,,flat over bar,,1,baker3
+15,18,beanplant to fakie,,,tranny,,ramp to wall,,,baker3
+16,19,bs tail fakie,,,ledge ,,,,,baker3
+16,20,switch bluntside,1,1,rail,,handrail,manmade,,baker3
+17,21,switch crook,1,,rail,,handrail,,,baker3
+18,22,bigflip,,,gap,,roof,gap to bank,1,baker3
+19,23,switch flip noseslide,1,,hubba,,,,,baker3
+20,24,bs noseblunt,,,rail,,handrail,manmade,,baker3
+21,25,fs board,,,hubba,,,,,baker3
+22,26,nollie bs flip360 ,1,,gap,,roof,,,baker3
+23,27,switch noseblunt,1,,ledge ,,shootout,,,baker3
+24,28,heelflip,,,gap,,roof,,,baker3
+25,29,switch tre,1,,stair,,doubleset,,,baker3
+26,30,bs 360 kickflip,,,gap,1,roof,,,baker3
+27,31,5050,,,rail,1,bank to rail,,1,baker3
+28,31,5050,,,rail,1,bank to rail,,1,baker3
+29,32,bs 5-0,,,rail,1,gap to rail,doubleset,,baker3
+30,33,taildrop kickflip,,,taildrop,,bank to rail,,1,baker3
+31,34,switch fs flip manual,1,,manual,,manual to drop,,,baker3
+32,35,ollie,,1,stair,,,,,baker3
+32,36,fs 180 nosegrind,,1,hubba,,,,,baker3
+33,36,fs 180 nosegrind,,1,hubba,,,,,baker3
+34,37,bs lip shuv,,,rail,,manmade,,,baker3
+35,38,switch fs flip nosegrind,1,,hubba,,,,,baker3
+36,39,switch fs tail,1,,rail,,handrail,,,baker3
+37,40,switch tre,1,,stair,,,,,baker3
+38,40,switch tre,1,,stair,,,,,baker3
+39,41,bs 360,,,stair,,,,,baker3
+40,42,bs 5050,,,rail,,handrail,,,baker3
+41,43,bs 360 lipslide,,,rail,,handrail,wilshire,,baker3
+42,44,nollie bs flip,1,,stair,,hollywood high,,,baker3
+43,45,switch flip,1,,stair,,over rail,,,baker3
+44,46,ollie,,,gap,,into bank,,1,baker3
+45,46,ollie,1,,gap,,into bank,,1,baker3
+46,47,fs lipslide,,,rail,,shootout rail to flat,,,baker3
+47,47,fs lipslide,,,rail,,shootout rail to flat,,,baker3
+48,48,switch fs flip,1,,stair,,wilshire,,,baker3
+49,48,switch fs flip,1,,stair,1,wilshire,,,baker3
+50,48,switch fs flip,1,,stair,1,wilshire,,,baker3
+1,1,switch crook,1,1,ledge ,,,,,baker 2g
+1,2,switch fs flip,1,1,flat,,,,,baker 2g
+1,3,bs 360,,1,gap,,,,,baker 2g
+2,3,bs 360,,1,gap,,,,,baker 2g
+3,4,switchflip boardslide,1,,rail,,handrail,,,baker 2g
+4,4,switchflip boardslide,1,,rail,1,handrail,,,baker 2g
+5,5,bluntslide,,,hubba,,,,,baker 2g
+6,5,bluntslide,,,hubba,1,,,,baker 2g
+7,6,bs lipslide,,,stair,1,gap to rail,,,baker 2g
+8,6,bs lipslide,,,stair,1,gap to rail,,,baker 2g
+9,7,switch fs flip,1,,stair,,over rail,wilshire,,baker 2g
+10,7,switch fs flip,1,,stair,,over rail,wilshire,,baker 2g
+11,8,switch crook,1,,rail,,handrail,wilshire,,baker 2g
+12,8,switch crook,1,,rail,1,handrail,wilshire,,baker 2g
+13,9,nollie bs flip,1,,stair,1,,wilshire,,baker 2g
+14,9,nollie bs flip,1,,stair,1,,wilshire,,baker 2g
+15,10,switch ollie,1,,stair,1,15,wilshire 15,,baker 2g
+16,11,bs 5-0,,,rail,1,handrail,wilshire 15,,baker 2g
+17,11,bs 5-0,,,rail,1,handrail,wilshire 15,,baker 2g
+18,12,bs lip,,,rail,1,handrail,wilshire 15,,baker 2g
+19,12,bs lip,,,rail,,handrail,wilshire 15,,baker 2g
+20,13,bs noseblunt,,,rail,,handrail,wilshire,,baker 2g
+21,13,bs noseblunt,,,rail,1,handrail,wilshire,,baker 2g
+22,14,switch fs flip,1,,stair,1,,,,baker 2g
+23,12,bs lip,,,rail,1,handrail,wilshire 15,,baker 2g
+24,13,bs noseblunt,,,rail,1,handrail,wilshire,,baker 2g
+1,1,bs 5050,,,rail,,handrail,gap to rail,,misled youth
+2,2,switch flip,1,,stair,,,,,misled youth
+3,3,bs 5-0,,,rail,,handrail,,,misled youth
+4,4,fs board,,,ledge ,,shootout,,,misled youth
+5,4,fs board,,,ledge ,,shootout,,,misled youth
+6,5,nollie 180,1,1,stair,,,,,misled youth
+6,6,switch fs flip,1,1,stair,,,,,misled youth
+7,6,switch fs flip,1,1,stair,,,,,misled youth
+8,7,bs tail shuv,,,ledge ,,bank to ledge,,1,misled youth
+9,7,bs tail shuv,,,ledge ,,bank to ledge,,1,misled youth
+10,8,bs lip,,,rail,,handrail,,,misled youth
+11,9,fakie fs flip,,1,flat,,,,,misled youth
+11,10,bs 180,,1,stair,,,,,misled youth
+12,11,bs 5050,,,rail,,handrail,,,misled youth
+13,12,bs 5-0,,,rail,,handrail,gap to rail,,misled youth
+14,12,bs 5-0,,,rail,,handrail,gap to rail,,misled youth
+15,13,slam,,,,,,,,misled youth
+16,14,bs lip shuv,,,rail,,handrail,,,misled youth
+17,15,360 flip,,,gap,,,,,misled youth
+18,16,fs lipslide,,,rail,,handrail,,,misled youth
+19,17,bs lip,,,rail,,handrail,,,misled youth
+20,18,switch flip,1,,gap,,,,,misled youth
+21,19,ollie,,,gap,,,,,misled youth
+22,20,bs smith,,,rail,,handrail,,,misled youth
+23,20,bs smith,,,rail,,handrail,,,misled youth
+24,21,bs 360,,,stair,1,,,,misled youth
+25,21,bs 360,,,stair,1,,,,misled youth
+1,1,switch fs flip,1,1,flat,,flat gap,,,baker bootleg
+1,2,hardflip,,1,flat,,,,,baker bootleg
+1,3,switch fs noseslide,1,1,ledge,,,,,baker bootleg
+2,4,switch 360 flip,1,,gap,,,,,baker bootleg
+3,5,rock and roll,,,tranny,,jersey barrier,,,baker bootleg
+4,6,bs ollie,,,tranny,,bank to bank,,1,baker bootleg
+5,7,bs tail,,,tranny,,bank to bank,,1,baker bootleg
+6,8,smith stall,,,stall,,bank to ledge,,1,baker bootleg
+7,9,tailstall fakie,,,stall,,bank to ledge,,1,baker bootleg
+8,10,fs blunt,,,stall,,bank to ledge,,1,baker bootleg
+9,11,heelflip,,,gap,,curb cut ,,1,baker bootleg
+10,12,switch flip,1,1,gap,,curb cut ,,1,baker bootleg
+10,13,switch 180,1,1,flat,,,,,baker bootleg
+11,14,ollie,,,gap,,,,,baker bootleg
+12,15,nollie flip  ,1,,stair,,,,,baker bootleg
+13,16,lipslide,,,ledge,,bank to ledge,,1,baker bootleg
+14,17,fs smith,,,ledge,,bank to ledge,,1,baker bootleg
+15,18,fs 5050,,,ledge,1,bank to ledge,,1,baker bootleg
+16,19,fs 5050 180,,,rail,,handrail,,,baker bootleg
+17,20,kickflip fakie,,,tranny,,quarterpipe,,,baker bootleg
+18,21,nollie heelflip nosestall,1,,tranny,,quarterpipe,,,baker bootleg
+19,22,switch flip bs tail,1,,tranny,,quarterpipe,,,baker bootleg
+20,23,nollie flip bs tail,1,,tranny,,quarterpipe,,,baker bootleg
+21,24,switch tre nosestall,1,,tranny,,quarterpipe,,,baker bootleg
+22,25,ollie,,,bank,,,,,baker bootleg
+23,26,bs boardslide,,,rail,,handrail,,,baker bootleg
+24,27,bs boardslide fakie,,,rail,,handrail,,,baker bootleg
+25,28,fs 5050,,,rail,,handrail,,,baker bootleg
+26,28,fs 5050,,,rail,,handrail,,,baker bootleg
+27,29,bs 5050,,,rail,1,handrail,,,baker bootleg
+28,30,ollie,,,flat,,flat gap,,,baker bootleg
+29,31,kickflip,,,bank,,,,1,baker bootleg
+30,32,hardflip,,,stair,,,,,baker bootleg
+31,33,fs 5-0,,,bank to ledge,,,,1,baker bootleg
+32,34,fs 5050,,,ledge,,kicker,,1,baker bootleg
+33,35,nollie bs flip,1,,gap,,,,,baker bootleg
+34,36,ollie,,,kicker,,car,,1,baker bootleg
+35,37,fs flip,,,bank,,,,1,baker bootleg
+36,37,fs flip,,,bank,,,,1,baker bootleg
+37,38,fs 360 kickflip,,,bank,,,,1,baker bootleg
+38,39,boardslide,,,rail,,handrail,,,baker bootleg
+39,40,bs lip,,,rail,1,handrail,,,baker bootleg
+40,41,switch fs flip,1,,gap,,,,,baker bootleg
+41,41,switch fs flip,1,,gap,,,,,baker bootleg
+1,1,switch flip,1,,gap,,,,,hook ups asian goddess
+2,2,bs tail,,,bank to ledge,,,,1,hook ups asian goddess
+3,3,heelflip,,1,flat,,,,,hook ups asian goddess
+3,4,ollie,,1,bank,,bank over picnic table,,1,hook ups asian goddess
+3,5,nollie flip,1,1,flat,,,,,hook ups asian goddess
+4,6,kickflip fakie,,,bank,,,,1,hook ups asian goddess
+5,7,switch tre,1,1,gap,,,,,hook ups asian goddess
+5,8,switch 180,1,1,flat,,,,,hook ups asian goddess
+6,9,switch fs hardflip 180,1,,bank,,,,1,hook ups asian goddess
+7,10,fakie tre,,1,flat,,over cone,,,hook ups asian goddess
+7,11,fakie flip,,1,flat,,,,,hook ups asian goddess
+8,12,switch hardflip,1,,bank,,,,1,hook ups asian goddess
+9,13,kickflip bs tail,,,bank to ledge,,,,1,hook ups asian goddess
+1,1,bs wallride,,,car,,,,,baker has a deathwish
+2,2,nollie inward heel,1,,bank to bank,,,,1,baker has a deathwish
+3,3,ollie,,,gap,,,,,baker has a deathwish
+4,4,body jar,,,tranny,,pool,,,baker has a deathwish
+5,5,taildrop fs board,,,hubba,,tail drop,,,baker has a deathwish
+6,6,kickflip,,,gap,,gap into bank,,1,baker has a deathwish
+7,7,ollie,,,stair,,over stairs,,,baker has a deathwish
+8,8,nollie bs flip manual,1,,manual,,,,,baker has a deathwish
+9,9,nollie bs flip manual 180,1,,manual,,,,,baker has a deathwish
+10,10,switch fs 360 kickflip,1,,tranny,,quarterpipe,,,baker has a deathwish
+11,11,bs 360,,,gap,,roof,,1,baker has a deathwish
+12,11,bs 360,,,gap,,roof,,,baker has a deathwish
+13,12,switch flip,1,,gap,,roof,,1,baker has a deathwish
+14,13,fs flip,,,gap,,roof,,1,baker has a deathwish
+15,14,switch fs flip,1,,gap,,roof,,1,baker has a deathwish
+16,15,switch bs 180,1,,gap,,,,,baker has a deathwish
+17,16,kickflip,,,gap,,,,,baker has a deathwish
+18,17,fs nosegrind,,,ledge,,shootout,,,baker has a deathwish
+19,18,fs smith fs 180,,,ledge,,shootout,,,baker has a deathwish
+20,19,switch crook,1,,ledge,,shootout,,,baker has a deathwish
+21,20,nollie bs flip,1,1,stair,,,,,baker has a deathwish
+21,21,switch flip,1,1,stair,,,,,baker has a deathwish
+22,22,ollie,,,stair,,,,,baker has a deathwish
+23,23,indy,,,bank,,nipple,,,baker has a deathwish
+24,24,switch fs lipslide,1,,rail,,handrail,,,baker has a deathwish
+25,25,fs noseblunt,,,rail,,handrail,,,baker has a deathwish
+26,26,fs blunt,,,hubba,,,,,baker has a deathwish
+27,27,switch tre boardslide,1,,rail,,"handrail, manmade",,,baker has a deathwish
+28,28,melon grab,,,gap,,roof,,,baker has a deathwish
+29,29,switch flip,1,,gap,,,,,baker has a deathwish
+30,30,switch fs 180,1,,gap,,,,,baker has a deathwish
+31,30,switch fs 180,1,,gap,,,,,baker has a deathwish
+32,31,ollie,,,gap,,over rail,,,baker has a deathwish
+33,32,switchflip bluntslide,1,,rail,,"handrail, manmade",,,baker has a deathwish
+34,33,nollie bs flip,1,,stair,,double set,,,baker has a deathwish
+35,34,bs 360 lipslide,,,rail,1,handrail,,,baker has a deathwish
+36,35,switchflip noseslide,1,,hubba,,,,,baker has a deathwish
+37,36,switch flip,1,,gap,1,,carlsbad,,baker has a deathwish
+38,37,,,,,,,,,baker has a deathwish
+1,1,360 flip,,1,flat,,,,,the deathwish video
+1,2,ollie to manual,,1,gap,,curbcut,,1,the deathwish video
+2,3,ollie,,,flat,,flat over rail,,,the deathwish video
+3,4,bs noseblunt,,,ledge,,car,,1,the deathwish video
+4,5,darkslide to fakie,,,ledge,,bank to ledge,,1,the deathwish video
+5,6,big heel darkslide,,,ledge,,,,,the deathwish video
+6,7,switchflip bs 5-0,1,,ledge,,shootout,,,the deathwish video
+7,8,hardflip,,,flat,,flatgap,,,the deathwish video
+8,9,bs 5050 to bs tail,,,ledge,,,,,the deathwish video
+9,10,bs nosepick,,,bank to ledge,,,,1,the deathwish video
+10,11,fs nosepick,,,bank to ledge,,,,1,the deathwish video
+11,11,fs nosepick,,,bank to ledge,,,,1,the deathwish video
+12,12,rock fakie,,,bank to wall,,manmade,,1,the deathwish video
+13,13,nollie bs flip,1,,gap,1,,carlsbad,,the deathwish video
+14,13,nollie bs flip,1,,gap,,,carlsbad,,the deathwish video
+15,14,switch flip,1,,stair,,,,,the deathwish video
+16,15,switch fs flip,1,,stair,,,,,the deathwish video
+17,16,ollie,,,stair,,,,,the deathwish video
+18,16,ollie ,,,stair,,,,,the deathwish video
+19,17,bs 360,,,stair,,,,,the deathwish video
+20,18,ollie,,,bank over car,,car,,1,the deathwish video
+21,18,ollie,,,bank over car,,car,,1,the deathwish video
+22,19,footplant,,,bank over wall,,,,1,the deathwish video
+23,19,footplant,,,bank over wall,,,,1,the deathwish video
+24,20,bs 180,,1,flat,,,,,the deathwish video
+24,21,fakie tre,,1,flat,,over hydrant,,,the deathwish video
+25,22,bs 360 tailslide kickflip,,,ledge,,bank to ledge,,1,the deathwish video
+26,23,switch tre lipslide,1,,rail,,handrail,,,the deathwish video
+27,23,switch tre lipslide,1,,rail,1,handrail,,,the deathwish video
+28,24,bs 360 lipslide,,,rail,,handrail,,,the deathwish video
+29,24,bs 360 lipslide,,,rail,,handrail,,,the deathwish video
+30,25,switch flip boardslide,1,,rail,,handrail,wilshire,,the deathwish video
+31,25,switch flip boardslide,1,,rail,,handrail,whilshire,,the deathwish video
+32,26,ollie,,,gap,,ollie into bank,,1,the deathwish video
+33,26,ollie,,,gap,,ollie into bank,,1,the deathwish video
+34,27,fakie big heel,,,stair,,,,,the deathwish video
+35,27,fakie big heel,,,stair,,,,,the deathwish video
+36,28,bs 5-0,,,rail,1,handrail,,,the deathwish video
+37,28,bs 5-0,,,rail,,handrail,,,the deathwish video
+38,29,impossible noseslide fakie,,,ledge,,bank to ledge,,1,the deathwish video
+39,30,bs 360 5050,,,ledge,1,bank to ledge,,1,the deathwish video
+40,31,switch tre darkslide,1,,ledge,,,,,the deathwish video
+41,32,360 flip darkslide ,,,ledge,,bank to ledge,,1,the deathwish video
+42,33,nollie bs flip fakie 5-0,1,,ledge,,bank to ledge,,1,the deathwish video
+43,34,alley-oop bs 180 nosegrind,,,ledge,1,bank to ledge,,1,the deathwish video
+44,35,bs 360 tailslide  ,,,hubba,,,,,the deathwish video
+45,36,bs 5-0,,,rail,,gap to rail,,,the deathwish video
+46,37,boardslide,,,rail,,gap to rail,,,the deathwish video
+47,38,fakie tre,,,gap,,,,,the deathwish video
+48,39,nollie tre,1,,stair,,,,,the deathwish video
+49,40,switch tre,1,,stair,,,,,the deathwish video
+50,40,switch tre,1,,stair,,,,,the deathwish video
+51,41,heelflip,,,gap,,roof,,,the deathwish video
+52,42,switch flip,,,gap,,roof,,,the deathwish video
+53,43,switch fs flip,,,gap,,roof,,,the deathwish video
+54,44,varial heelflip,,,gap,,roof,,,the deathwish video
+55,45,bs 360,,,gap,,roof,,,the deathwish video
+56,45,bs 360,,,gap,,roof,,,the deathwish video
+57,46,nollie bs flip,,,stair,1,,,,the deathwish video
+58,47,bs 180 nosegrind revert,,,rail,1,handrail,manmade,,the deathwish video
+59,48,fs 5050,,,rail,,rail to bank,kicker,1,the deathwish video
+60,49,switch flip bluntslide,,,rail,1,handrail,,,the deathwish video
+61,50,bs 360 noseblunt,,,rail,1,handrail,,,the deathwish video
+62,51,switch darkslide,1,,rail,1,handrail,manmade,,the deathwish video
+63,51,switch darkslide,1,,rail,1,handrail,manmade,,the deathwish video
