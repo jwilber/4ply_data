@@ -1,0 +1,426 @@
+---
+title: "Skater Taxonomy - Jim Greco"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
+
+```{r echo=F}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, fig.width=12, fig.height=8)
+```
+
+
+```{r echo=F, warning=F, message=F}
+library(kableExtra)
+library(tidyverse)
+
+df <- read_csv('greco.csv')
+
+vid_order <- c('hook ups asian goddess', '411 Wheels of Fortune', 'baker bootleg', 'misled youth', 'baker 2g', 'baker3', 'baker has a deathwish', 'the deathwish video', 'the way out', 'year 13', 'Jobs? Never!!')
+vid_year <- c('hook ups asian goddess' = 1994,
+              '411 Wheels of Fortune' = 1997,
+               'baker bootleg' = 1998,
+               'misled youth' = 1999,
+               'baker 2g' = 2000,
+               'baker3' = 2005,
+               'baker has a deathwish' = 2008,
+               'the deathwish video' = 2013,
+               'the way out' = 2016,
+               'year 13' = 2017,
+               'Jobs? Never!!' = 2018
+               )
+
+df <- df %>% 
+  mutate(year = vid_year[video],
+         video_fac = factor(video, levels = vid_order, ordered = TRUE)) %>% 
+  select(-one_of(c('X12')))
+
+
+```
+
+
+*Note*
+Here are some graphs & stats corresponding to the most interesting stuff I found. Let me know if you want me to investigate something else. The graphs aren't necessarily the best visual representation of the underlying data, so once we hone in on what we want to show, I can export PNGs of the charts so you can trace them in Illustrator/whatever the process for a Jenkem aesthetic is. Also if there's something you want me to investigate, let me know! I'll do it so as long as it's possible with the dataset I created.
+
+
+## Stuff I Think We Should Highlight 
+- **top tricks are mostly what we expect** (bs 360, switch fs flip variations, etc.)
+- **top tricks by video part**
+- **Greco loves to skate sloped stuff, and does so a lot (E.g. banks, curbcuts, natural quarterpipes). He did a lot at the beginning of his career, stopped in the middle, and did a lot at the end of his career.**
+- **Decline of stair + handrail skating over time (Hammers USA was not a lot of hammers).**
+- **Greco's best (traditional) video part in terms of trick diversity + unique trick count: The Deathwish Video.** (Sober Greco = more productive narrative?).
+- **baker2g is his worst video part. It used by FAR the most repeated angles, the most slow-motion, as well as the lowest number of tricks (both total and unique). I didn't track locations unfortunately, but I'm pretty sure that part is like 90% wilshire.**
+
+
+## Graphs For Stuff I Said We Should Highlight
+- **top tricks are mostly what we expect** (bs 360, switch fs flip variations, etc.)
+
+Important - Given that Greco did a trick down stairs, there's a 33% chance it was a switch fs flips or nollie bs flips! (not shown in graph, but definitely worth a mention). I.e., 1/3 of Greco's tricks *down stairs* were switch fs flip variations.
+
+```{r}
+df %>% 
+  group_by(trick) %>%
+  summarise(trick_count = n()) %>% 
+  filter(trick_count > 5) %>% 
+  arrange(desc(trick_count)) %>% 
+  ggplot(aes(x = reorder(trick, trick_count), y = trick_count)) +
+  geom_bar(stat = 'identity', show.legend = FALSE) +
+  labs(title = "Jim Greco: Top Tricks") +
+  xlab("") +
+  ylab("Trick Count") +
+  coord_flip() +
+  theme_minimal()
+```
+
+
+- **top tricks by video part**
+
+```{r}
+pd <- df %>% 
+  group_by(trick, video) %>% 
+  summarise(trick_count = n()) %>% 
+  select(trick, video, trick_count) %>% 
+  filter(trick_count > 1) %>%
+  ungroup() %>%
+  arrange(video, trick_count) %>%
+  mutate(order = row_number()) 
+
+ggplot(pd, aes(x = order, y = trick_count, fill = video)) +
+  geom_bar(stat = 'identity', show.legend = FALSE) +
+  facet_wrap(~ video, scales = 'free') +
+  labs(title = "Jim Greco, Top Tricks by Video") +
+  xlab("") +
+  ylab("") +
+  scale_y_continuous(limits=c(0,5)) +
+  theme_minimal() +
+  scale_x_continuous(
+    breaks = pd$order,
+    labels = pd$trick,
+    expand = c(0,0)
+  ) +
+  coord_flip()
+```
+
+
+- **Greco loves to skate sloped stuff, and does so a lot (E.g. banks, curbcuts, natural quarterpipes). He did a lot at the beginning of his career, stopped in the middle, and did a lot at the end of his career.**
+
+```{r}
+df %>% 
+  count(video_fac, hasbank) %>% 
+  group_by(video_fac) %>% 
+  mutate(bankpercent = n/sum(n)) %>% 
+  filter(hasbank == 1) %>% 
+  select(video_fac, bankpercent) %>% 
+  ungroup() %>% 
+  ggplot(aes(x = video_fac, y = bankpercent)) +
+  geom_bar(stat='identity') +
+  theme_minimal() +
+  labs(title = "Greco Skates Banks/Slope Stuff A Lot") +
+  ylab("Percent of tricks on or into bank") +
+  xlab("Video")
+```
+
+
+- **Decline of stair + handrail skating over time (Hammers USA was not a lot of hammers).**
+
+
+```{r}
+obstacle_over_years <- df %>% 
+  group_by(year, obstacle) %>% 
+  summarise(n = n()) %>% 
+  mutate(relfreq = n / sum(n)) %>% 
+  filter(obstacle %in% c('stair', 'gap', 'rail'),
+         !year %in% c(1994)) %>% 
+  bind_rows(data.frame(year = 2018., obstacle = 'rail', n = 0, relfreq = 0.0),
+            data.frame(year = 2018., obstacle = 'gap', n = 0, relfreq = 0.0)) %>% 
+    arrange(desc(year))
+
+obstacle_over_years %>% 
+  ggplot(aes(x = year, y = relfreq, color = obstacle)) +
+  geom_line(lwd = 2) +
+  labs(title = "Hammers USA: Not A Lot Of 'Hammers'",
+       subtitle = "Percentage of Clips Skating Rails, Stairs, or Gaps Over Time") +
+  ylab("Percentage of Time Skating Object") +
+  theme_classic()
+```
+
+
+- **baker2g is his worst video part. It used by FAR the most repeated angles, the most slow-motion, as well as had the lowest number of tricks (both total and unique). I didn't track locations unfortunately, but I'm pretty sure that part is like 90% wilshire, so lacks spot diversity as well.**
+
+
+```{r}
+video_counts <- df %>% 
+  distinct(video, trick_index) %>% 
+  group_by(video) %>% 
+  summarise(trick_count = n())
+
+df_perc_double_angles <- df %>% 
+  group_by(video, trick_index) %>% 
+  summarise(nn = n()) %>%
+  filter(nn > 1) %>% 
+  group_by(video) %>% 
+  summarise(freq = n()) %>% 
+  arrange(desc(freq)) %>% 
+  inner_join(video_counts, by = 'video') %>% 
+  mutate(percent_double_angle = round(freq/trick_count, 2)) %>% 
+  select(video, percent_double_angle) %>% 
+  arrange(desc(percent_double_angle))
+
+df_perc_slowmo <- df %>% 
+  group_by(video) %>% 
+  mutate(num_tricks = n()) %>% 
+  ungroup() %>% 
+  filter(slowmo == 1) %>% 
+  group_by(video, num_tricks) %>% 
+  summarise(num_slowmo = n()) %>% 
+  rowwise() %>% 
+  mutate(percentage_slowmo = num_slowmo / num_tricks) %>% 
+  select(video, percentage_slowmo) %>% 
+  arrange(desc(percentage_slowmo))
+
+df_percentages <- df_perc_double_angles %>% 
+  inner_join(df_perc_slowmo, by = "video")
+
+df_percentages %>% 
+  ggplot(aes(x= percentage_slowmo, y= percent_double_angle, label=video))+
+  geom_point(size = 1) +
+  geom_text(aes(label=video),hjust=.5, vjust=0, text = element_text(size = 8)) +
+  labs(title = "Baker 2G Is Greco's 'Worst' Part") +
+  xlab("Percentage of Slow Motion Tricks") + 
+  ylab("Percentage of Tricks With At Least Two Angles") +
+  theme_classic()
+
+```
+
+
+**Sober Greco Is Killing It**
+- **Greco's best (traditional) video part in terms of trick diversity + unique trick count: The Deathwish Video.**
+
+
+```{r}
+
+sober <- 
+  (which(levels(df$video_fac) == "baker 2g") +
+     which(levels(df$video_fac) == "baker3")) / 
+  2
+
+df %>% 
+  group_by(video_fac, video_fac) %>%
+  # count distinct tricks, but don't double count
+  distinct(trick_index, .keep_all = T) %>% 
+  summarise(unique_tricks = n_distinct(trick),
+            total_tricks = n()) %>% 
+  # arrange(desc(year)) %>% 
+  ggplot() +
+  geom_point(aes(x = video_fac, y = unique_tricks), size = 5, alpha = .5, color = 'red') +
+  geom_point(aes(x = video_fac, y = total_tricks), size = 5, alpha = .5) +
+  labs(title = "Greco Got Better With Age",
+       subtitle = "Number of Tricks Over Time (Black: Total, Red: Unique)") +
+  # scale_x_continuous(breaks=c(1994, 1998, 1999, 2000, 2005, 2008, 2013)) +
+  scale_y_continuous(limits=c(0, 60)) +
+  xlab("") +
+  ylab("Number of Unique Tricks") +
+  theme_classic()+
+  geom_vline(aes(xintercept = sober), lwd = 2, colour = 'coral')+
+  geom_text(aes(x=sober, label="Greco Gets Sober", y=59), colour="black", angle=0, text=element_text(size=25)) +
+  geom_text(aes(x=which(levels(df$video_fac) == "the deathwish video"), label="Greco's 'Best' Video", y=53), angle = 0, text = element_text(size=10))
+```
+
+
+
+
+
+# Summary Stats (just raw numbers)
+
+```{r}
+num_clips <- nrow(df)
+```
+Total number of clips (including multiple angles): `r num_clips`.
+
+```{r}
+num_unique_tricks <- df %>% 
+  distinct(video, trick_index) %>% 
+  nrow()
+```
+Total number of tricks across all videos (not counting double-angles): `r num_unique_tricks`.
+
+```{r}
+num_car_tricks <- df %>% 
+  rowwise() %>% 
+  mutate(hascar = ifelse('car' %in% obstacle || 'car' %in% `obstacle 2`, 1, 0)) %>% 
+  filter(hascar == 1) %>% 
+  distinct(video, trick_index) %>% 
+  nrow()
+
+# add over time?
+```
+Number of unique tricks (i.e. don't count double-angles) where Greco skates a car: `r num_car_tricks`.
+
+
+```{r}
+num_manuals <- df %>% 
+  rowwise() %>% 
+  mutate(has_manual = 'manual' %in% obstacle || 'manual' %in% `obstacle 2`) %>% 
+  filter(has_manual == 1) %>% 
+  distinct(video, trick_index) %>%
+  nrow()
+```
+Total number of manual tricks: `r num_manuals`.
+
+
+```{r}
+num_switch_tricks <- df %>% 
+  filter(`switch?` == 1) %>% 
+  distinct(video, trick_index) %>% 
+  nrow()
+```
+Total number of switch clips: `r num_switch_tricks`.
+
+###
+
+```{r ee}
+num_multi_angles <- df %>% 
+  count(trick_index, video) %>% 
+  filter(n > 1) %>% 
+  arrange(desc(n)) %>% 
+  nrow()
+```
+Number of tricks with more than one angle: `r num_multi_angles`.
+
+```{r ee1}
+num_flat_tricks <- df %>% 
+  rowwise() %>% 
+  filter('flat' %in% obstacle || 'flat' %in% `obstacle 2`) %>% 
+  nrow()
+```
+Number of flatground tricks: `r num_flat_tricks`.
+
+
+```{r ee2}
+num_lines <- df %>% 
+  filter(`inline?` == 1) %>% 
+  distinct(clip_index, video) %>% 
+  nrow()
+```
+
+
+Number of lines: `r num_lines`.
+```{r ee3}
+num_tricks_long_line <- df %>% 
+  count(clip_index, video) %>% 
+  arrange(desc(n)) %>% 
+  pull(n) %>% 
+  max()
+```
+
+Number of tricks in longest line: `r num_tricks_long_line`.
+
+
+###
+```{r}
+num_banks <- df %>% 
+  filter(hasbank == 1) %>% 
+  distinct(trick_index, video) %>% 
+  nrow()
+```
+Number of tricks involving slopes (i.e. curbcuts, banks, natural quarterpipes, etc.): `r num_banks`.
+
+```{r}
+num_slowmo <- df %>% 
+  filter(slowmo == 1) %>% 
+  distinct(clip_index, video) %>% 
+  nrow()
+```
+Number of slow-mo clips: `r num_slowmo`.
+
+## Some Aggregate Stats
+
+Most Popular Tricks
+```{r echo=F, warning=F}
+df %>% 
+  group_by(trick) %>%
+  summarise(num = n()) %>% 
+  filter(num > 5) %>% 
+  arrange(desc(num)) 
+```
+
+
+```{r}
+prob_stair_is_ss_fs <- df %>% 
+  filter(obstacle == 'stair') %>% 
+  group_by(trick) %>% 
+  summarise(n = n()) %>% 
+  mutate(relfreq = n / sum(n)) %>% 
+  rowwise() %>% 
+  filter(trick == 'switch fs flip' || trick == 'nollie bs flip') %>% 
+  pull(relfreq) %>% 
+  sum()
+```
+*Given that a trick is done down stairs, probability of trick being a switch fs flip or nollie bs flip:* `r prob_stair_is_ss_fs`.
+(i.e. P[trick is switch fs flip variation | trick down stairs])
+
+
+Most popular tricks done on flatground (note, this includes tricks over objects, e.g. a fire hydrant).
+```{r}
+df %>% 
+  rowwise() %>% 
+  filter('flat' %in% obstacle || 'flat' %in% `obstacle 2`) %>% 
+  group_by(trick) %>% 
+  summarise(n = n()) %>% 
+  arrange(desc(n)) %>% 
+  filter(n > 1)
+```
+
+Video with most repeated angles
+```{r}
+df_perc_double_angles
+```
+
+Most popular tricks done in lines
+```{r}
+df %>% 
+  rowwise() %>% 
+  filter(`inline?` == 1) %>% 
+  group_by(trick) %>% 
+  summarise(n = n()) %>% 
+  arrange(desc(n)) %>% 
+  filter(n > 1)
+```
+
+
+Video with most switch tricks:
+```{r}
+df %>% 
+  filter(`switch?` == 1) %>% 
+  distinct(video, trick_index) %>% 
+  group_by(video) %>% 
+  summarise(n = n()) %>% 
+  arrange(desc(n))
+```
+
+Video with most percentage of switch tricks:
+```{r}
+df %>% 
+  group_by(video) %>% 
+  mutate(num_tricks = n()) %>% 
+  ungroup() %>% 
+  filter(`switch?` == 1) %>% 
+  group_by(video, num_tricks) %>% 
+  summarise(num_switch = n()) %>% 
+  rowwise() %>% 
+  mutate(percentage_switch = num_switch / num_tricks) %>% 
+  select(video, percentage_switch) %>% 
+  arrange(desc(percentage_switch))
+```
+
+Video with most percentage of slow-motion tricks:
+```{r}
+df_perc_slowmo
+```
+
+
+
+# Bonus: Weirdest Trick?
+
+Gif of his Switch Hardflip FS 180 (that awful Sewa trick) on the bank (on some Storm Hsu tip, lol).
