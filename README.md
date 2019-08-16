@@ -29,12 +29,14 @@ We want a dataset with the following schema:
 
 That is, for a given video part, add a row to the dataset above for each trick. 
 
+If you think of something interesting, feel free to add it as a column. For example, I noticed that Greco skates a ton of banks/slopes/etc., so I added a column called `has_bank` to his dataset.
+
 
 #### Example
 
-For [Koston's part](https://www.youtube.com/watch?v=8Y3_l_phKA4) in the 101 promo, I created [this dataset]().
+For [Koston's part](https://www.youtube.com/watch?v=8Y3_l_phKA4) in the 101 promo, I created [this dataset](https://github.com/jwilber/jenkem_data/blob/master/koston/data/koston.csv).
 
-For all of Greco's parts, I created [this dataset]().
+For all of Greco's parts, I created [this dataset](https://github.com/jwilber/jenkem_data/blob/master/greco/data/greco.csv).
 
 
 
