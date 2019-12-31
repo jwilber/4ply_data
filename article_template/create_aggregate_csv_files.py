@@ -11,7 +11,7 @@ Example:
         $ python create_aggregate_csv_files.py
 
         # call with arguments
-        $ python get_bob_ross_paintings.py --csv_path koston_data.csv --data_dir 
+        $ python create_aggregate_csv_files.py --csv_path koston_data.csv --data_dir ./data
 """
 
 import argparse
