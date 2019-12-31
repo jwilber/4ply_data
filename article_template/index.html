@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>TEMPLATE: Numbers</title>
+  <link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
+</head>
+
+
+<div id="main-wrapper">
+
+  <h1>The Numbers: TEMPLATE</h1>
+  <br>
+  <h4>By Jared Wilber</h4>
+  <p>
+    <br>
+    INTRO TEXT GOES HERE
+      <br><br>
+    <p>
+
+      <h1>Top Tricks</h1>
+      <br>
+      <p>
+        DISCUSS TOP TRICKS HERE & INTRODUCE TOP N TRICKS CHART:
+        <br>
+        <br>
+      </p>
+      <div id="my_dataviz"></div>
+      <p> 
+        <br>
+        DISCUSS CHART MORE
+        <br>
+        <br> 
+      </p>
+
+      <h1>Top Tricks By Obstacle</h1>
+      <p>
+        <br>
+        DISCUSS TOP TRICKS BY OBSTACLE CHART HERE
+      </p>
+      <center>
+      <div class='some-page-wrapper'>
+        <div class='row'>
+          <div class='column' id="bar1">
+          </div>
+          <div class='column' id="bar2">
+          </div>
+          <div class='column' id="bar3">
+          </div>
+          <div class='column' id="bar4">
+          </div>
+        </div>
+      </div>
+      </center>
+      <h1>Over The Years</h1>
+      <p>
+        DISCUSS TIME SERIES CHART
+      <br>
+      <br>
+      </p>
+
+      <div id="obstacles">
+        </div>
+      </div>
+      <p>
+        DISCUSS ABOVE CHART
+        <br>
+        <br>
+        ALSO DISCUSS TABLE BELOW
+        todo: automate table with d3.
+        <br>
+        <br>
+      </p>
+      <div class="table">
+        <table>
+          <tr>
+            <th class="left">Video</th>
+            <th># Clips</th>
+            <th># Tricks</th>
+            <th>% Distinct Tricks</th>
+          </tr>
+          <tr>
+            <td class="left">101 - WWII Report (1992)</td>
+            <td>24</td>
+            <td>33</td>
+            <td>91.0</td>
+          </tr>
+          <tr>
+            <td class="left">Union - Right to Skate (1992)</td>
+            <td>24</td>
+            <td>30</td>
+            <td>97.0</td>
+          </tr>
+          <tr>
+            <td class="left">H-Street - Next Generation (1992)</td>
+            <td>90</td>
+            <td>105</td>
+            <td>90.0</td>
+          </tr>
+          <tr>
+            <td class="left">101 - Falling Down (1993)</td>
+            <td>37</td>
+            <td>48</td>
+            <td>92.0</td>
+          </tr>
+          <tr>
+            <td class="left">Girl - Goldfish (1994)</td>
+            <td>20</td>
+            <td>55</td>
+            <td>73.0</td>
+          </tr>
+          <tr>
+            <td class="left">Etnies - High 5 (1995)</td>
+            <td>7</td>
+            <td>12</td>
+            <td>100.0</td>
+          </tr>
+          <tr>
+            <td class="left">Transworld - Uno (1996)</td>
+            <td>15</td>
+            <td>17</td>
+            <td>82.0</td>
+          </tr>
+          <tr>
+            <td class="left">Girl - Mouse (1996)</td>
+            <td>43</td>
+            <td>61</td>
+            <td>87.0</td>
+          </tr>
+          <tr>
+            <td class="left">Chocolate - The Chocolate Tour (1999)</td>
+            <td>18</td>
+            <td>21</td>
+            <td>100.0</td>
+          </tr>
+          <tr>
+            <td class="left">éS - Menikmati (2000)</td>
+            <td>54</td>
+            <td>51</td>
+            <td>88.0</td>
+          </tr>
+          <tr>
+            <td class="left">Chomp On This (2002)</td>
+            <td>42</td>
+            <td>54</td>
+            <td>93.0</td>
+          </tr>
+          <tr>
+            <td class="left">Girl - Yeah Right (2003)</td>
+            <td>74</td>
+            <td>78</td>
+            <td>86.0</td>
+          </tr>
+          <tr>
+            <td class="left">Lakai - Fully Flared (2007)</td>
+            <td>48</td>
+            <td>53</td>
+            <td>98.0</td>
+          </tr>
+          <tr>
+            <td class="left">Girl - Pretty Sweet (2012)</td>
+            <td>8</td>
+            <td>11</td>
+            <td>93.0</td>
+          </tr>
+          <tr>
+            <td class="left">Nike - The SB Chronicles Vol. 3 (2015)</td>
+            <td>36</td>
+            <td>34</td>
+            <td>91.0</td>
+          </tr>
+        </table>
+      </div>
+
+      <p>
+        DISCUSS TABLE MORE
+        <br>
+        <br>
+      </p>
+
+
+      <h1 class="centered goth">Video Breakdown</h1>
+
+      <p>
+        <br>
+        Each square below is made up of one-hundred points, with each point representing one percent.
+        In this manner, we can compare how the distribution of various metrics differs across TEMPLATE's video parts, giving us a richer look into how they vary from each other.
+        <br><br>
+      </p>
+      <!-- <p class="desc centered">Select video part.</p> -->
+      <div id="update">
+
+        <div id="percentages" class="centered buttonsBox">
+          <!-- <h3 style="text-align: left;">Select video part</h3> -->
+          <div class="button current" data-val="101_WWII_Report">101 - WWII Report</div>
+          <div class="button" data-val="Union_Right_to_Skate">Union - Right to Skate</div>
+          <div class="button" data-val="H_Street_Next_Generation">H-Street - Next Generation</div>
+          <div class="button" data-val="Girl_Goldfish">Girl - Goldfish</div>
+          <div class="button" data-val="101_Falling_Down">101 - Falling Down</div>
+          <div class="button" data-val="Girl_Pretty_Sweet">Girl - Pretty Sweet</div>
+          <div class="button" data-val="Etnies_High_5">Etnies - High 5</div>
+          <div class="button" data-val="Transworld_Uno">Transworld - Uno</div>
+          <div class="button" data-val="Girl_Mouse">Girl - Mouse</div>
+          <div class="button" data-val="Chocolate_The_Chocolate_Tour">Chocolate - The Chocolate Tour</div>
+          <div class="button" data-val="Lakai_Fully_Flared">Lakai - Fully Flared</div>
+          <div class="button" data-val="Nike_The_SB_Chronicles_Vol_3">Nike - The SB Chronicles Vol. 3</div>
+          <div class="button" data-val="Girl_Yeah_Right">Girl - Yeah Right</div>
+          <div class="button" data-val="eS_Menikmati" style="margin-right:0">éS - Menikmati</div>
+          <div class="button" data-val="Chomp_On_This" style="margin-right:0">Chomp On This</div>
+          <!-- this is just here to line up the bottom row of buttons: -->
+          <div id="spaceFiller"></div>
+          <!-- <div class="clr"></div> -->
+        </div>
+      </div><!-- @end #update -->
+
+      <div class="clr"></div>
+
+      <div class="genericholder">
+        <h2>Percentage of ...</h2>
+        <div id="charts"></div>
+      </div>
+
+      <p>
+        DISCUSS INSIGHT FROM ABOVE
+      </p>
+      <li>
+          <ul>&#8226; HIGHLIGHT 1.</ul>
+          <ul>&#8226; HIGHLIGHT 2. </ul>
+          <ul>&#8226; HIGHLIGHT 3.</ul>
+          <ul>&#8226; HIGHLIGHT 4.</ul>
+        </li>
+      <p>
+        Feel free to explore for yourself, and mention   any stuff you find in the comments.
+        <br>
+        <br>
+      </p>
+     
+      <hr>
+      <h1>Data & Methodology</h1>
+      <p>
+        <br>
+        Although TEMPLATE has had clips in many skate videos, the set of data was limited to include only his full-length video parts, as these are generally what we consider when looking at the "career" of a skater. Skate video information was (painstakingly) logged by-hand from the aforementioned videos. Data in the first chart was limited to tricks with counts greater than four. Data was limited to counts greater than two in the by-obstacle count charts. Data in the time-series chart was limited to ledges, handrails, and stairs/gaps because other obstacle classifications (e.g. transition, manuals) had too little counts for meaningful input.
+        <br><br> The data for the analysis is available <a href="https://github.com/jwilber/jenkem_data/blob/master/greco/data/greco.csv">here</a>. Code used for the analysis is <a href="https://github.com/jwilber/jenkem_data/blob/master/koston/code/clean_data.py">here</a>. Code for the charts <a href="https://github.com/jwilber/koston_article/tree/master/js">here</a>. For any questions or comments to the author, reachout: <a href="https://twitter.com/jdwlbr">@jdwilbr</a>.
+        <br>
+        <br>
+        <br>
+      </p>
+
+</div><!-- @end #main-wrapper -->
+
+
+<script src="js/d3.v4.min.js"></script>
+
+<script id="grid" type="text/plain">
+01 02 03 04 05 06 07 08 09 10
+11 12 13 14 15 16 17 18 19 20
+21 22 23 24 25 26 27 28 29 30
+31 32 33 34 35 36 37 38 39 40
+41 42 43 44 45 46 47 48 49 50
+51 52 53 54 55 56 57 58 59 60
+61 62 63 64 65 66 67 68 69 70
+71 72 73 74 75 76 77 78 79 80
+81 82 83 84 85 86 87 88 89 90
+91 92 93 94 95 96 97 98 99 100
+</script>
+
+<script id="field_details">
+  var field_details = {
+    "perc_switch": { desc: "Switch Tricks", color: "#c9a111" },
+    "perc_slowmo": { desc: "Slowmo Tricks", color: "#c9a111" },
+    "perc_fs": { desc: "FS Tricks", color: "#c9a111" },
+    "perc_bs": { desc: "BS Tricks", color: "#c9a111" },
+    "perc_ledge": { desc: "Ledge Tricks", color: "#c9a111" },
+    "perc_stair": { desc: "Stair/Gap Tricks", color: "#c9a111" },
+    "perc_transition": { desc: "Transition Tricks", color: "#c9a111" },
+    "perc_manual": { desc: "Manual Tricks", color: "#c9a111" },
+    "perc_picnic": { desc: "Picnic Table Tricks", color: "#c9a111" },
+    "perc_flat": { desc: "Flatground Tricks", color: "#c9a111" },
+    "perc_handrail": { desc: "Handrail Tricks", color: "#c9a111" },
+    "perc_curb": { desc: "Curb Tricks", color: "#c9a111" },
+    // "widowed": { desc: "Widowed", color: "#01d99f" },
+  };
+
+</script>
+
+
+<script type="text/javascript" src="js/barplot.js"></script>
+<script type="text/javascript" src="js/bar.js"></script>
+<script type="text/javascript" src="js/multiLine.js"></script>
+<script type="text/javascript" src="js/squarepie.js"></script>

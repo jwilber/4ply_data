@@ -1,0 +1,302 @@
+/* Fonts */
+/*==============*/
+@font-face {
+	font-family: LeagueGothicRegular;
+	src: url("../assets/leaguegothic-regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: LeagueGothicRegular;
+	font-weight: bold;
+	src: url("../assets/leaguegothic-regular.otf") format("opentype");
+}
+
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block; }
+	body {
+		line-height: 1; }
+	blockquote, q {
+		quotes: none; }
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none; }
+	table {
+		border-collapse: collapse;
+		border-spacing: 0; }
+
+
+body {
+	font-family: Helvetica;
+	font-size: 1rem;
+	color: #262520;
+}
+
+.goth {
+font-family: LeagueGothicRegular;
+}
+
+a {
+	font-style: normal;
+	text-decoration: underline;
+	color: #000;
+}
+#main-wrapper {
+	max-width: 100%;
+	margin: 20px auto;
+}
+
+#header {
+	margin-bottom: 10px;
+}
+
+
+/* .clr { clear: both; } */
+.centered { text-align: center; }
+.hidden  { 
+	display: none; 
+	pointer-events: none;
+}
+sup { 
+	vertical-align: text-top;
+	font-size: smaller;
+}
+
+/* Text
+============================ */
+
+h1 {
+	font-size: 2.2rem;
+	font-style: uppercase;
+	margin: 0 0 6px 0px;
+	font-family: LeagueGothicRegular;
+	text-align: center;
+	max-width: 800px;
+	margin: auto;
+}
+h4 {
+	font-size: 1.2rem;
+	font-style: uppercase;
+	margin: 0 0 6px 0px;
+	font-family: LeagueGothicRegular;
+	text-align: center;
+	max-width: 800px;
+	margin: auto;
+	color: grey;
+}
+h2 {
+	padding-top:10px;
+	font-size: 1.4rem;
+	text-align: center;
+	margin-bottom: .5rem;
+}
+h3 {
+	font-size: 1.1em;
+	/*padding: 3px 0px 5px 0;*/
+	padding-bottom: 0px;
+	font-style: normal;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	font-family: LeagueGothicRegular;
+}
+p, li {
+	margin-bottom: .5em;
+	max-width: 45%;
+	display: block;
+	margin: auto;
+}
+
+hr {
+	max-width: 20%;
+}
+
+.desc {
+	font-style: italic;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+
+/* Controls
+============================ */
+
+#obstacles, #my_dataviz, #grid-container {
+	max-width: 800px;
+	margin: auto;
+}
+
+#update {
+	margin: 20px auto;
+	max-width: 800px;
+}
+
+.buttons {
+	margin: auto;
+}
+
+#grid-container {
+	display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1px;
+}
+	.grid-item {
+		display: block;
+		padding: 0px;
+		margin: 0px 0px;
+	}
+
+
+#percentages {
+	max-width: 690px;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.button {
+	min-width: 15em;
+	height: 1.8em; 
+	line-height: 1.8em;
+	padding: 2px;
+	margin-top: 6px;
+	cursor: pointer;
+	text-align: center;
+	font-size: .7rem;
+	border: 2px solid #e0e0e0;
+	-moz-border-radius: 10px;
+	border-radius: 2px;
+	background: #f7f6f1;
+	font-family: Helvetica;
+}
+	#spaceFiller {
+		width: 218px;
+		height: 1px; 
+	}
+.button:hover {
+	background: #e0e0e0;
+}
+.button.current {
+	background: #c9a111;
+	color: #262520;
+}
+
+
+/* Chart
+============================ */
+
+#totalcnt {
+	margin: 20px 0 30px 0;
+}
+#totalcnt #n {
+	font-size: 3.0em;
+}
+#charts {
+	/* position: relative; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 20px;
+	max-width: 750px;
+	margin: auto;
+}
+	.chartholder h3 {
+		height: 1.2em;
+		text-align: center;
+		width: 89%;
+	}
+
+
+.tick {
+	font-family: LeagueGothicRegular;
+	font-size: 2em;
+}
+
+.y-axis path.domain {
+	opacity: 0;
+}
+
+
+/*Table*/
+/*=================*/
+.table {
+	max-width: 55%;
+	margin: auto;
+	overflow-x:auto;
+	padding-top: 1rem;
+	padding-bottom: 3rem;
+}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+		margin: auto;
+		font-size: .8rem;
+	}
+		th {
+			padding: 4px;
+			border-bottom: 5px solid #d0d0d0;
+			text-align: right;
+			font-family: LeagueGothicRegular;
+			font-size: 1.2rem;
+		}
+		td {
+			padding: 4px;
+			border-bottom: 1px solid #d0d0d0;
+			text-align: right;
+		}
+
+.left {
+	text-align: left;
+}
+
+.x-axis {
+	font-size: .5rem;
+}
+
+/*bar chart multiples*/
+.some-page-wrapper {
+  display: flex;
+  margin: 15px;
+  max-width: 80%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.bold {
+	font-family: LeagueGothicRegular;
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+ul.a {
+  list-style-type: circle;
+}
+
+.h3title {
+	font-size: 1.1rem;
+	font-family: LeagueGothicRegular;
+}
