@@ -1,5 +1,5 @@
-# jenkem_data
-data driven skate stuff for jenkemmag
+# 4ply_data
+data driven skate stuff for 4plymag
 
 ### Articles
 
