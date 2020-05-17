@@ -1,6 +1,8 @@
 # 4ply_data
 data driven skate stuff for 4plymag
 
+Example dataset to follow: [andrew allen data](https://github.com/jwilber/4ply_data/blob/master/Allen/allen.csv)
+
 ### Articles
 
 - **Greco**: http://www.jenkemmag.com/home/2019/07/31/statistical-analysis-every-jim-greco-clip/
